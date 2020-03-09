@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Frame x:Key="frameEstandar"></Frame>
+
+    <!--Color
+        Fuentes (doubles)
+    Objetos (buttons)
+    Están pensados para hacer que los elemetos cambien según la plataforma. El CSS es universal.
+    -->
+</ResourceDictionary>
