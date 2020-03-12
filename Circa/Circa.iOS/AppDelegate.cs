@@ -5,6 +5,8 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
+using Syncfusion.SfCalendar.XForms.iOS;
+
 namespace Circa.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -22,7 +24,14 @@ namespace Circa.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            //Xamarin Forms Extended Controls
+            //XfxControls.Init();
+
             global::Xamarin.Forms.Forms.Init();
+
+            //SfCalendar
+            SfCalendarRenderer.Init();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

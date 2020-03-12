@@ -2,10 +2,97 @@
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Frame x:Key="frameEstandar"></Frame>
+   
+   <!-- General Colors -->
+    <Color x:Key="colorPrimary">#336CC1</Color>
+    <Color x:Key="colorPrimaryDark">#336CC1</Color>
+    <Color x:Key="secondaryColor">#C9AE98</Color>
+    <Color x:Key="colorAccent">Green</Color>
+    <Color x:Key="darkAccentColor">#5E5EE9</Color>
+    <Color x:Key="NavigationBarTextColor">White</Color>
+    <Color x:Key="NavigationBarBackgroundColor">Blue</Color>
+    <Color x:Key="backgroundColorBtnWarning">#D03434</Color>
+    <Color x:Key="textColorBtnWarning">White</Color>
 
-    <!--Color
-        Fuentes (doubles)
-    Objetos (buttons)
-    Están pensados para hacer que los elemetos cambien según la plataforma. El CSS es universal.
-    -->
+        <!-- ...puedes agregar más colores dependiendo del número de 
+
+            controladores que tengas -->
+
+        <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+
+
+
+
+        <!-- General Sizes -->
+
+        <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+        <x:Double x:Key="bigTextSize">20</x:Double>
+
+        <x:Double x:Key="mediumTextSize">15</x:Double>
+
+        <x:Double x:Key="smallTextSize">12</x:Double>
+
+        <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+
+
+
+
+        <!--General Styles-->
+
+        <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!--
+        <Style TargetType="Button" x:Key="btnStart">
+
+
+
+
+
+
+
+            <Setter Property="FontSize">
+
+                <Setter.Value>
+
+                    <OnPlatform x:TypeArguments="x:Double">
+
+                        <On Platform="Android, iOS" Value="{StaticResource mediumTextSize}"/>
+
+                        <On Platform="UWP" Value="{StaticResource bigTextSize}"/>
+
+                    </OnPlatform>
+
+                </Setter.Value>
+
+            </Setter>
+
+
+
+            <Setter Property="BackgroundColor">
+
+                <Setter.Value>
+
+                    <OnPlatform x:TypeArguments="Color">
+
+                        <On Platform="iOS, Android" Value="Red"/>
+
+                        <On Platform="UWP" Value="{StaticResource backgroundColorBtnWarning}"/>
+
+                    </OnPlatform>
+
+                </Setter.Value>
+
+            </Setter>
+
+
+
+            <Setter Property="TextColor" Value="{StaticResource textColorBtnWarning}"/>
+
+
+
+        </Style>
+-->
+        <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 </ResourceDictionary>

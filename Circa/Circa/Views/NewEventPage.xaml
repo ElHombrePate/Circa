@@ -1,52 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage     xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:chipgroup="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                 xmlns:d="http://xamarin.com/schemas/2014/forms/design"
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                 mc:Ignorable="d"
                 xmlns:local="clr-namespace:Circa"
-                x:Class="Circa.Views.NewEventPage"
-                
-                xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
-  <!--Pages can be added as references or inline-->
-    
+                xmlns:syncfusion="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
+                x:Class="Circa.Views.NewEventPage">
+
     <ContentPage Title="Características">
         <ScrollView>
-            <StackLayout Margin="10, 10">
-
-                <Image Source="{local:ImageResource Circa.Images.information.png}" />
+            <StackLayout Margin="10, 10" >
 
                 <Frame CornerRadius="10" HasShadow="True" BackgroundColor="#70D073">
                     <Entry Placeholder="Título"/>
                 </Frame>
-<!--
-                <Image Source="information"
-                       WidthRequest="{OnPlatform iOS=300, Android=250}"
-                       HorizontalOptions="Center"/>
--->
+
                 <Frame CornerRadius="10" HasShadow="True" BackgroundColor="#70D073">
                     <StackLayout>
                         <Label Text="Información"/>
 
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="9*"/>
                             </Grid.ColumnDefinitions>
 
-                            <!--
-                                <Image Source="Imagenes.information.png" Grid.Row="0" Grid.Column="0"/>
-                            -->
+                            <Image Source="{local:ImageResource Circa.Images.112-information.png}" Grid.Row="0" Grid.Column="0"/>
                             <Entry Placeholder="Descripción" Grid.Row="0" Grid.Column="1"/>
 
+                            <Image Source="{local:ImageResource Circa.Images.138-maps-and-flags-1.png}" Grid.Row="1" Grid.Column="0"/>
                             <Entry Placeholder="Ubicación" Grid.Row="1" Grid.Column="1"/>
 
+                            <Image Source="{local:ImageResource Circa.Images.089-steering.png}" Grid.Row="2" Grid.Column="0"/>
                             <Picker Title="Ámbito" Grid.Row="2" Grid.Column="1">
                                 <Picker.Items>
                                     <x:String>Familia</x:String>
@@ -56,6 +49,7 @@
                                 </Picker.Items>
                             </Picker>
 
+                            <Image Source="{local:ImageResource Circa.Images.118-number-1.png}" Grid.Row="3" Grid.Column="0"/>
                             <Grid Grid.Row="3" Grid.Column="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
@@ -76,49 +70,72 @@
 
                 <Frame CornerRadius="10" HasShadow="True" BackgroundColor="#70D073">
                     <StackLayout>
-                        <TableView Intent="Form" Margin="0, 0">
+                        
+                        <!--
+                            <Label Text="Usuarios empoderados" Grid.Row="0" Grid.Column="1" />
+                    
+                        <TableView Intent="Form">
                             <TableRoot>
                                 <TableSection>
-                                    <SwitchCell Text="Usuarios empoderados" />
+                                    <SwitchCell Text="Usuarios Empoderados" On="False" />
                                 </TableSection>
                             </TableRoot>
                         </TableView>
-
+                            -->
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Label Text="Límite de aportaciones por usuario" Grid.Row="0" Grid.Column="0"/>
-                            <NumberBox  Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
-                                        SmallChange="10"
-                                        LargeChange="100"
-                                        SpinButtonPlacementMode="Compact" 
-                                        Grid.Row="0" Grid.Column="0"/>
-                            <xctk:IntegerUpDown Name="myUpDownControl" />
-                            <NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}"
-    SmallChange="10"
-    LargeChange="100"
-    SpinButtonPlacementMode="Compact" />
-                        </Grid>
-
-
-
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
+
+                            <Label Text="Usuarios Empoderados" Grid.Row="0" Grid.Column="0"/>
+                            <Switch IsToggled="False" Grid.Row="0" Grid.Column="1"/>
                         </Grid>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="9*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="{local:ImageResource Circa.Images.196-user.png}" Grid.Row="0" Grid.Column="0"/>
+                            <Grid Grid.Row="0" Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="Límite de aportaciones" Grid.Row="0" Grid.Column="0"/>
+                                <Entry Keyboard="Numeric" Grid.Row="0" Grid.Column="1"/>
+                            </Grid>
+
+                            <Image Source="{local:ImageResource Circa.Images.118-number-1.png}" Grid.Row="1" Grid.Column="0"/>
+                            <Grid Grid.Row="1" Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="Límite de tiempo:" Grid.Row="0" Grid.Column="0"/>
+                                <TimePicker x:Name="horaFinVotacion" Grid.Row="0" Grid.Column="1"/>
+                                <DatePicker x:Name="fechaFinVotacion" Grid.Row="0" Grid.Column="2"/>
+                            </Grid>
+                        </Grid>
+
                     </StackLayout>
                 </Frame>
                 
@@ -126,5 +143,25 @@
         </ScrollView>
     </ContentPage>
 
-    <ContentPage Title="Fechas" />
+    <ContentPage Title="Fechas">
+        <Grid Margin="10,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Frame CornerRadius="10" HasShadow="True" BackgroundColor="#70D073" Margin="0,0" Grid.Row="0">
+                <syncfusion:SfCalendar x:Name="calendar" />
+            </Frame>
+
+            <ScrollView Grid.Row="1">
+                <Frame CornerRadius="10" HasShadow="True" BackgroundColor="#70D073">
+                    <Label Text="Vivimos"/>
+                </Frame>
+            </ScrollView>
+
+        </Grid>
+
+
+    </ContentPage>
 </TabbedPage>
