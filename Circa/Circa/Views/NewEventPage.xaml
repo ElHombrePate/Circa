@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage     xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:chipgroup="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                 xmlns:d="http://xamarin.com/schemas/2014/forms/design"
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -13,11 +12,11 @@ xmlns:chipgroup="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.But
         <ScrollView>
             <StackLayout Margin="10, 10" >
 
-                <Frame CornerRadius="10" HasShadow="True" BackgroundColor="#70D073">
+                <Frame Style="{StaticResource frameStyle}">
                     <Entry Placeholder="Título"/>
                 </Frame>
 
-                <Frame CornerRadius="10" HasShadow="True" BackgroundColor="#70D073">
+                <Frame Style="{StaticResource frameStyle}">
                     <StackLayout>
                         <Label Text="Información"/>
 
@@ -150,7 +149,7 @@ xmlns:chipgroup="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.But
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Frame CornerRadius="10" HasShadow="True" BackgroundColor="#70D073" Margin="0,0" Grid.Row="0">
+            <Frame Grid.Row="0">
                 <syncfusion:SfCalendar x:Name="calendar" />
             </Frame>
 

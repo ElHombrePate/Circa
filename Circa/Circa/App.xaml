@@ -6,9 +6,8 @@
              mc:Ignorable="d"
              x:Class="Circa.App">
     <Application.Resources>
-        <!--
         <ResourceDictionary Source="/Styles/GeneralStyle.xaml"/>
-
+        <!--
         <StyleSheet Source="/Styles/GeneralStyles.css"/>
         -->
     </Application.Resources>
