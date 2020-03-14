@@ -28,8 +28,8 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="0.1*"/>
+                                <ColumnDefinition Width="0.9*"/>
                             </Grid.ColumnDefinitions>
 
                             <Image Source="{local:ImageResource Circa.Images.112-information.png}" Grid.Row="0" Grid.Column="0"/>
@@ -67,20 +67,8 @@
                     </StackLayout>
                 </Frame>
 
-                <Frame CornerRadius="10" HasShadow="True" BackgroundColor="#70D073">
+                <Frame Style="{StaticResource frameStyle}">
                     <StackLayout>
-                        
-                        <!--
-                            <Label Text="Usuarios empoderados" Grid.Row="0" Grid.Column="1" />
-                    
-                        <TableView Intent="Form">
-                            <TableRoot>
-                                <TableSection>
-                                    <SwitchCell Text="Usuarios Empoderados" On="False" />
-                                </TableSection>
-                            </TableRoot>
-                        </TableView>
-                            -->
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
@@ -100,8 +88,8 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="0.1*"/>
+                                <ColumnDefinition Width="0.9*"/>
                             </Grid.ColumnDefinitions>
 
                             <Image Source="{local:ImageResource Circa.Images.196-user.png}" Grid.Row="0" Grid.Column="0"/>
@@ -145,22 +133,26 @@
     <ContentPage Title="Fechas">
         <Grid Margin="10,10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
             </Grid.RowDefinitions>
 
-            <Frame Grid.Row="0">
+            <Frame Style="{StaticResource frameStyle}" Grid.Row="0">
                 <syncfusion:SfCalendar x:Name="calendar" />
             </Frame>
 
-            <ScrollView Grid.Row="1">
-                <Frame CornerRadius="10" HasShadow="True" BackgroundColor="#70D073">
-                    <Label Text="Vivimos"/>
-                </Frame>
-            </ScrollView>
-
+            <Frame Style="{StaticResource frameStyle}" Grid.Row="1">
+                <ScrollView>
+                    <StackLayout>
+                        <Label Text="Vivimos"/>
+                        <Label Text="Vivimos"/>
+                        <Label Text="Vivimos"/>
+                        <Label Text="Vivimos"/>
+                        <Label Text="Vivimos"/>
+                        <Label Text="Vivimos"/>
+                    </StackLayout>
+                </ScrollView>
+            </Frame>
         </Grid>
-
-
     </ContentPage>
 </TabbedPage>

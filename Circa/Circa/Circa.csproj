@@ -12,6 +12,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\MasterDetailPage1.xaml.cs" />
+    <Compile Remove="Views\MasterDetailPage1Detail.xaml.cs" />
+    <Compile Remove="Views\MasterDetailPage1Master.xaml.cs" />
+    <Compile Remove="Views\MasterDetailPage1MasterMenuItem.cs" />
+    <Compile Remove="Views\Page1.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\MasterDetailPage1.xaml" />
+    <EmbeddedResource Remove="Views\MasterDetailPage1Detail.xaml" />
+    <EmbeddedResource Remove="Views\MasterDetailPage1Master.xaml" />
+    <EmbeddedResource Remove="Views\Page1.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Images\022-tick-1.png" />
+    <None Remove="Images\077-more.png" />
     <None Remove="Images\089-steering.png" />
     <None Remove="Images\112-information.png" />
     <None Remove="Images\118-number-1.png" />
@@ -22,6 +39,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Images\022-tick-1.png" />
+    <EmbeddedResource Include="Images\077-more.png" />
     <EmbeddedResource Include="Images\089-steering.png" />
     <EmbeddedResource Include="Images\112-information.png" />
     <EmbeddedResource Include="Images\118-number-1.png" />
@@ -37,6 +56,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Styles\GeneralStyle.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\NewEventPage.xaml">

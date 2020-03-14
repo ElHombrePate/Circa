@@ -1,21 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace Circa
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace Circa.Views
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
-    [DesignTimeVisible(false)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        /*
+        async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
+        {
+          if (listView.SelectedItem != null) {
+            var detailPage = new DetailPage ();
+            ...
+            await Navigation.PushModalAsync (detailPage);
+          }
+        }
+        */
+        async void NewEventCreation_Clicked(object sender, EventArgs e)
+        {
+            //if (listView.SelectedItem != null){}
+
+            var NewEventPage = new NewEventPage();
+
+            await Navigation.PushModalAsync(NewEventPage);
         }
     }
 }

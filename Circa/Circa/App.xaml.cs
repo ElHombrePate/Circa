@@ -16,7 +16,7 @@ namespace Circa
 
             InitializeComponent();
 
-            MainPage = new NewEventPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
