@@ -8,6 +8,59 @@
                 xmlns:syncfusion="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
                 x:Class="Circa.Views.NewEventPage">
 
+    <NavigationPage.TitleView>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <ImageButton Source="{local:ImageResource Circa.Images.172-left-arrow.png}"
+                         Clicked="CancelNewEvent_Clicked"
+                         HeightRequest="40"
+                         WidthRequest="40"
+                         Grid.Column="0" />
+            <Label Text="Nuevo Evento"
+                   HorizontalOptions="CenterAndExpand"
+               
+                   Grid.Column="1"/>
+            <ImageButton Source="{local:ImageResource Circa.Images.022-tick-1.png}"
+                         Clicked="ConfirmNewEvent_Clicked"    
+                         HeightRequest="40"
+                         WidthRequest="40"
+                         Grid.Column="2"/>
+        </Grid>
+        
+        <!--
+        <StackLayout>
+            <ImageButton Source="{local:ImageResource Circa.Images.172-left-arrow.png}"
+                         Clicked="CancelNewEvent_Clicked"
+                         Grid.Column="0" />
+            <ImageButton Source="{local:ImageResource Circa.Images.172-left-arrow.png}"
+                         Clicked="CancelNewEvent_Clicked"
+                         Grid.Column="0" />
+        </StackLayout>
+        -->
+    </NavigationPage.TitleView>
+    
+<!--
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem IconImageSource="{local:ImageResource Circa.Images.022-tick-1.png}"  
+            Order="Primary"
+            Priority="1"
+            Clicked="ConfirmNewEvent_Clicked"/>
+
+        <ToolbarItem/>
+
+        <ToolbarItem IconImageSource="{local:ImageResource Circa.Images.122-cancel.png}"  
+            Order="Primary"
+            Priority="0"
+            Clicked="CancelNewEvent_Clicked"/>
+    </TabbedPage.ToolbarItems>
+-->
+
     <ContentPage Title="Características">
         <ScrollView>
             <StackLayout Margin="10, 10" >

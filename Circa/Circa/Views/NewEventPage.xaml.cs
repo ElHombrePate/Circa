@@ -16,5 +16,15 @@ namespace Circa.Views
         {
             InitializeComponent();
         }
+
+        private void ConfirmNewEvent_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void CancelNewEvent_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync ();
+        }
     }
 }

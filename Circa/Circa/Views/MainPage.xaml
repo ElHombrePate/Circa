@@ -6,13 +6,20 @@
              mc:Ignorable="d"
              xmlns:local="clr-namespace:Circa"
              xmlns:syncfusion="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
-             x:Class="Circa.Views.MainPage">
+             x:Class="Circa.Views.MainPage"
+             Title="Circa">
+
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label Text="Circa"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem    IconImageSource="{local:ImageResource Circa.Images.077-more.png}"  
                         Order="Primary"
                         Priority="1"
-                        Clicked="NewEventCreation_Clicked"
-                        />
+                        Clicked="NewEventCreation_Clicked"/>
     </ContentPage.ToolbarItems>
 
     <Grid Margin="10,10">
@@ -28,9 +35,20 @@
         <Frame Style="{StaticResource frameStyle}" Grid.Row="1">
             <ScrollView>
                 <StackLayout>
-
+                    <Label Text="Vivimos"/>
+                    
                 </StackLayout>
             </ScrollView>
         </Frame>
+        
+        <ImageButton Grid.Row="1"
+            Source="{local:ImageResource Circa.Images.077-more.png}"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            WidthRequest="72"
+            HeightRequest="72"
+            Margin="0,0,25,25" 
+            BackgroundColor="Transparent"
+            Clicked="NewEventCreation_Clicked"/>
     </Grid>
 </ContentPage>

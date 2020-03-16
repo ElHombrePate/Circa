@@ -31,7 +31,7 @@ namespace Circa.Views
         {
             //if (listView.SelectedItem != null){}
 
-            var NewEventPage = new NewEventPage();
+            var NewEventPage = new NavigationPage(new NewEventPage());
 
             await Navigation.PushModalAsync(NewEventPage);
         }

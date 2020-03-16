@@ -32,7 +32,9 @@
     <None Remove="Images\089-steering.png" />
     <None Remove="Images\112-information.png" />
     <None Remove="Images\118-number-1.png" />
+    <None Remove="Images\122-cancel.png" />
     <None Remove="Images\138-maps-and-flags-1.png" />
+    <None Remove="Images\172-left-arrow.png" />
     <None Remove="Images\196-user.png" />
     <None Remove="Images\dados.png" />
     <None Remove="Images\information.png" />
@@ -45,6 +47,7 @@
     <EmbeddedResource Include="Images\112-information.png" />
     <EmbeddedResource Include="Images\118-number-1.png" />
     <EmbeddedResource Include="Images\138-maps-and-flags-1.png" />
+    <EmbeddedResource Include="Images\172-left-arrow.png" />
     <EmbeddedResource Include="Images\196-user.png" />
   </ItemGroup>
 
@@ -52,6 +55,10 @@
     <PackageReference Include="Syncfusion.Xamarin.SfCalendar" Version="17.4.0.55" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\122-cancel.png" />
   </ItemGroup>
 
   <ItemGroup>
