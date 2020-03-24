@@ -35,8 +35,26 @@
         <Frame Style="{StaticResource frameStyle}" Grid.Row="1">
             <ScrollView>
                 <StackLayout>
-                    <Label Text="Vivimos"/>
-                    
+                    <!--
+                    ItemsSource="{Binding admin}"
+                    -->
+                    <ListView x:Name="EventListView">
+                        <ListView.ItemTemplate>
+                            <!--<DataTemplate x:DataType="">-->
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+                                        <Label Text="{Binding Title}"/>
+                                        <Label Text="{Binding VoteLimit}" />
+                                        <Label Text="{Binding VoteLimit.DateTime.Day.ToString()}" />
+                                        <Label x:Name="VoteLimitDateView"/>
+                                        <Label Text="{Binding VoteLimitDate()}"/>
+                                        <Label Text="{Binding VoteLimitTime}"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </StackLayout>
             </ScrollView>
         </Frame>

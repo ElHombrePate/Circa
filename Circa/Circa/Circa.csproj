@@ -12,6 +12,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="NewFolder1\**" />
+    <Compile Remove="NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder1\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="NewFolder1\**" />
+    <None Remove="NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\Class1.cs" />
+    <Compile Remove="Models\EventList.cs" />
     <Compile Remove="Views\MasterDetailPage1.xaml.cs" />
     <Compile Remove="Views\MasterDetailPage1Detail.xaml.cs" />
     <Compile Remove="Views\MasterDetailPage1Master.xaml.cs" />
@@ -38,6 +49,7 @@
     <None Remove="Images\196-user.png" />
     <None Remove="Images\dados.png" />
     <None Remove="Images\information.png" />
+    <None Remove="Models\Nuevo documento de texto.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,6 +64,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.CodeQuality.Analyzers" Version="2.9.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfCalendar" Version="17.4.0.55" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.1" />

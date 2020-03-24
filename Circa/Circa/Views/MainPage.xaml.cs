@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Circa.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,25 +16,16 @@ namespace Circa.Views
         public MainPage()
         {
             InitializeComponent();
-        }
 
-        /*
-        async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
-        {
-          if (listView.SelectedItem != null) {
-            var detailPage = new DetailPage ();
-            ...
-            await Navigation.PushModalAsync (detailPage);
-          }
+            EventListView.ItemsSource = App.admin.Events;
         }
-        */
         async void NewEventCreation_Clicked(object sender, EventArgs e)
         {
             //if (listView.SelectedItem != null){}
 
             var NewEventPage = new NavigationPage(new NewEventPage());
 
-            await Navigation.PushModalAsync(NewEventPage);
+            await Navigation.PushModalAsync(NewEventPage).ConfigureAwait(false);
         }
     }
 }
