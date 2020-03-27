@@ -8,21 +8,29 @@ namespace Circa.Models
     {
         // public static readonly Color Black = new Color(0, 0, 0);
 
+        public static readonly List<string> eventFieldList = new List<string>()
+        {
+            "Familia",
+            "Trabajo",
+            "Amigos",
+            "Médico"
+        };
+
         //private int id = 0;
         private string title = "<Sin título>";
         private string description = "<Sin descripción>";
-        private string type = "<Sin tipo>";
+        private string field = "<Sin tipo>";
         //collection notas
         private User admin;
         private DateTimeOffset voteLimit = DateTimeOffset.UtcNow;
 
         public CalendarEvent() { }
 
-        public CalendarEvent(string title, string description, string type, User admin, DateTimeOffset voteLimit)
+        public CalendarEvent(string title, string description, string field, User admin, DateTimeOffset voteLimit)
         {
             Title = title;
             Description = description;
-            Type = type;
+            Field = field;
             Admin = admin;
             VoteLimit = voteLimit;
         }
@@ -43,9 +51,11 @@ namespace Circa.Models
 
         public string VoteLimitTime() => VoteLimit.DateTime.Day.ToString();
 
+        //public override string VoteLimit.ToString() {}
+
         public string Title { get => title; set => title = value; }
         public string Description { get => description; set => description = value; }
-        public string Type { get => type; set => type = value; }
+        public string Field { get => field; set => field = value; }
         internal User Admin { get => admin; set => admin = value; }
         public DateTimeOffset VoteLimit { get => voteLimit; set => voteLimit = value; }
 

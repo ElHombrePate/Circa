@@ -8,7 +8,7 @@ using Xamarin.Forms.Xaml;
 namespace Circa
 {
     [ContentProperty(nameof(Source))]
-    class ImageResourceExtension : IMarkupExtension
+    public class ImageResourceExtension : IMarkupExtension
     {
         public string Source { get; set; }
         public object ProvideValue(IServiceProvider serviceProvider)

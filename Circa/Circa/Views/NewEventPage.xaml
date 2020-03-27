@@ -66,7 +66,7 @@
             <StackLayout Margin="10, 10" >
 
                 <Frame Style="{StaticResource frameStyle}">
-                    <Entry Placeholder="Título"/>
+                    <Entry x:Name="titleEntry" Placeholder="Título"/>
                 </Frame>
 
                 <Frame Style="{StaticResource frameStyle}">
@@ -86,20 +86,18 @@
                             </Grid.ColumnDefinitions>
 
                             <Image Source="{local:ImageResource Circa.Images.112-information.png}" Grid.Row="0" Grid.Column="0"/>
-                            <Entry Placeholder="Descripción" Grid.Row="0" Grid.Column="1"/>
+                            <Entry x:Name="descriptionEntry" Placeholder="Descripción" Grid.Row="0" Grid.Column="1"/>
 
                             <Image Source="{local:ImageResource Circa.Images.138-maps-and-flags-1.png}" Grid.Row="1" Grid.Column="0"/>
-                            <Entry Placeholder="Ubicación" Grid.Row="1" Grid.Column="1"/>
+                            <Entry x:Name="ubicationEntry" Placeholder="Ubicación" Grid.Row="1" Grid.Column="1"/>
 
                             <Image Source="{local:ImageResource Circa.Images.089-steering.png}" Grid.Row="2" Grid.Column="0"/>
-                            <Picker Title="Ámbito" Grid.Row="2" Grid.Column="1">
-                                <Picker.Items>
-                                    <x:String>Familia</x:String>
-                                    <x:String>Trabajo</x:String>
-                                    <x:String>Amigos</x:String>
-                                    <x:String>Médicos</x:String>
-                                </Picker.Items>
-                            </Picker>
+                            <Picker x:Name="fieldEntry" Title="Ámbito" Grid.Row="2" Grid.Column="1" />
+
+                            <!--
+                            <Image Source="{local:ImageResource Circa.Images.089-steering.png}" Grid.Row="2" Grid.Column="0"/>
+                            <Picker x:Name="fieldEntry" Title="Ámbito" Grid.Row="2" Grid.Column="1" />
+-->
 
                             <Image Source="{local:ImageResource Circa.Images.118-number-1.png}" Grid.Row="3" Grid.Column="0"/>
                             <Grid Grid.Row="3" Grid.Column="1">
@@ -113,10 +111,11 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Label Text="Límite de tiempo:" Grid.Row="0" Grid.Column="0"/>
-                                <TimePicker x:Name="horaFinEvento" Grid.Row="0" Grid.Column="1"/>
-                                <DatePicker x:Name="fechaFinEvento" Grid.Row="0" Grid.Column="2"/>
+                                <TimePicker x:Name="endEventTimePicker" Grid.Row="0" Grid.Column="1"/>
+                                <DatePicker x:Name="endEventDatePicker" Grid.Row="0" Grid.Column="2"/>
                             </Grid>
                         </Grid>
+
                     </StackLayout>
                 </Frame>
 
