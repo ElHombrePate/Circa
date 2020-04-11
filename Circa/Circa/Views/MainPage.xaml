@@ -8,31 +8,47 @@
              xmlns:syncfusion="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
              x:Class="Circa.Views.MainPage"
              Title="Circa">
-
-    <NavigationPage.TitleView>
-        <StackLayout>
-            <Label Text="Circa"/>
-        </StackLayout>
-    </NavigationPage.TitleView>
     
-    <ContentPage.ToolbarItems>
-        <ToolbarItem    IconImageSource="{local:ImageResource Circa.Images.077-more.png}"  
-                        Order="Primary"
-                        Priority="1"
-                        Clicked="NewEventCreation_Clicked"/>
-    </ContentPage.ToolbarItems>
+    
+    
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
 
+            <Label Style="{StaticResource NavigationBarTitleLabel}"
+                   Text="Circa"
+                   Grid.Column="0"/>
+
+            <ImageButton Style="{StaticResource NavigationBarImageButton}"
+                         Source="{local:ImageResource Circa.Images.077-more.png}"
+                         Clicked="NewEventCreation_Clicked"    
+                         Grid.Column="1"/>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <!--
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="{local:ImageResource Circa.Images.077-more.png}"  
+                     Order="Primary"
+                     Priority="1"
+                     Clicked="NewEventCreation_Clicked"/>
+    </ContentPage.ToolbarItems>
+-->
+    
     <Grid Margin="10,10">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
 
-        <Frame Style="{StaticResource frameStyle}" Grid.Row="0">
+        <Frame Style="{StaticResource FrameStyle}" Grid.Row="0">
             <syncfusion:SfCalendar x:Name="calendar" />
         </Frame>
 
-        <Frame Style="{StaticResource frameStyle}" Grid.Row="1">
+        <Frame Style="{StaticResource FrameStyle}" Grid.Row="1">
             <ScrollView>
                 <StackLayout>
                     <!--

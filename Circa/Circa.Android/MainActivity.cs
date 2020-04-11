@@ -28,6 +28,9 @@ namespace Circa.Droid
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+
+            //Change the Status Bar Color in Android
+            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#000000")); 
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

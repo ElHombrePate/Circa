@@ -4,23 +4,24 @@ using System.Text;
 
 namespace Circa.Models
 {
-    public class User
+    public class AppUser
     {
         private int id;
         private string nickname = "<Sin Apodo>";
-        private ObservableCollection<CalendarEvent> events = new ObservableCollection<CalendarEvent>();
+        private List<CalendarEvent> events;
+        //private ObservableCollection<CalendarEvent> events = new ObservableCollection<CalendarEvent>();
 
-        public User(int id, string nickname, ObservableCollection<CalendarEvent> events)
+        public AppUser(int id, string nickname)
+        {
+            Id = id;
+            Nickname = nickname;
+        }
+
+        public AppUser(int id, string nickname, List<CalendarEvent> events)
         {
             Id = id;
             Nickname = nickname;
             Events = events;
-        }
-
-        public User(int id, string nickname) 
-        {
-            Id = id;
-            Nickname = nickname;
         }
 
         public override string ToString()
@@ -34,6 +35,6 @@ namespace Circa.Models
 
         public int Id { get => id; set => id = value; }
         public string Nickname { get => nickname; set => nickname = value; }
-        public ObservableCollection<CalendarEvent> Events { get => events; set => events = value; }
+        public List<CalendarEvent> Events { get => events; set => events = value; }
     }
 }

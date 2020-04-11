@@ -9,7 +9,6 @@
                 x:Class="Circa.Views.NewEventPage">
 
     <NavigationPage.TitleView>
-
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -17,22 +16,20 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <ImageButton Source="{local:ImageResource Circa.Images.172-left-arrow.png}"
+            <ImageButton Style="{StaticResource NavigationBarImageButton}"
+                         Source="{local:ImageResource Circa.Images.172-left-arrow.png}"
                          Clicked="CancelNewEvent_Clicked"
-                         HeightRequest="40"
-                         WidthRequest="40"
                          Grid.Column="0" />
-            <Label Text="Nuevo Evento"
+            <Label Style="{StaticResource NavigationBarTitleLabel}" 
+                   Text="Nuevo Evento"
                    HorizontalOptions="CenterAndExpand"
-               
                    Grid.Column="1"/>
-            <ImageButton Source="{local:ImageResource Circa.Images.022-tick-1.png}"
+            <ImageButton Style="{StaticResource NavigationBarImageButton}"
+                         Source="{local:ImageResource Circa.Images.022-tick-1.png}"
                          Clicked="ConfirmNewEvent_Clicked"    
-                         HeightRequest="40"
-                         WidthRequest="40"
                          Grid.Column="2"/>
         </Grid>
-        
+
         <!--
         <StackLayout>
             <ImageButton Source="{local:ImageResource Circa.Images.172-left-arrow.png}"
@@ -44,8 +41,8 @@
         </StackLayout>
         -->
     </NavigationPage.TitleView>
-    
-<!--
+
+    <!--
     <TabbedPage.ToolbarItems>
         <ToolbarItem IconImageSource="{local:ImageResource Circa.Images.022-tick-1.png}"  
             Order="Primary"
@@ -65,16 +62,17 @@
         <ScrollView>
             <StackLayout Margin="10, 10" >
 
-                <Frame Style="{StaticResource frameStyle}">
+                <Frame Style="{StaticResource FrameStyle}">
                     <Entry x:Name="titleEntry" Placeholder="Título"/>
                 </Frame>
 
-                <Frame Style="{StaticResource frameStyle}">
+                <Frame Style="{StaticResource FrameStyle}">
                     <StackLayout>
                         <Label Text="Información"/>
 
                         <Grid>
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
@@ -94,32 +92,28 @@
                             <Image Source="{local:ImageResource Circa.Images.089-steering.png}" Grid.Row="2" Grid.Column="0"/>
                             <Picker x:Name="fieldEntry" Title="Ámbito" Grid.Row="2" Grid.Column="1" />
 
-                            <!--
-                            <Image Source="{local:ImageResource Circa.Images.089-steering.png}" Grid.Row="2" Grid.Column="0"/>
-                            <Picker x:Name="fieldEntry" Title="Ámbito" Grid.Row="2" Grid.Column="1" />
--->
-
                             <Image Source="{local:ImageResource Circa.Images.118-number-1.png}" Grid.Row="3" Grid.Column="0"/>
-                            <Grid Grid.Row="3" Grid.Column="1">
+                            <Label Text="Límite te tiempo para votar:" Grid.Row="3" Grid.Column="1"/>
+
+                            <!--(4,0) no existe-->
+                            <Grid Grid.Row="4" Grid.Column="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Label Text="Límite de tiempo:" Grid.Row="0" Grid.Column="0"/>
-                                <TimePicker x:Name="endEventTimePicker" Grid.Row="0" Grid.Column="1"/>
-                                <DatePicker x:Name="endEventDatePicker" Grid.Row="0" Grid.Column="2"/>
+                                <DatePicker x:Name="endEventDatePicker" Grid.Column="0"/>
+                                <TimePicker x:Name="endEventTimePicker" Grid.Column="1"/>
                             </Grid>
                         </Grid>
 
                     </StackLayout>
                 </Frame>
 
-                <Frame Style="{StaticResource frameStyle}">
+                <Frame Style="{StaticResource FrameStyle}">
                     <StackLayout>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -177,7 +171,7 @@
 
                     </StackLayout>
                 </Frame>
-                
+
             </StackLayout>
         </ScrollView>
     </ContentPage>
@@ -189,19 +183,32 @@
                 <RowDefinition Height="0.5*"/>
             </Grid.RowDefinitions>
 
-            <Frame Style="{StaticResource frameStyle}" Grid.Row="0">
-                <syncfusion:SfCalendar x:Name="calendar" />
+            <Frame Style="{StaticResource FrameStyle}" Grid.Row="0">
+                <syncfusion:SfCalendar x:Name="calendar"
+                                       FirstDayofWeek="2"
+                                       OnCalendarTapped="Calendar_OnCalendarTapped"
+                                       SelectionChanged="Handle_SelectionChanged"
+                                       SelectionMode="MultiSelection"/>
             </Frame>
 
-            <Frame Style="{StaticResource frameStyle}" Grid.Row="1">
+            <Frame Style="{StaticResource FrameStyle}" Grid.Row="1">
                 <ScrollView>
                     <StackLayout>
-                        <Label Text="Vivimos"/>
-                        <Label Text="Vivimos"/>
-                        <Label Text="Vivimos"/>
-                        <Label Text="Vivimos"/>
-                        <Label Text="Vivimos"/>
-                        <Label Text="Vivimos"/>
+                        <ListView x:Name="votedDatesListView">
+                           <!--
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout>
+                                            <Label Text="{Binding Title}"/>
+                                            <Label Text="{Binding VoteLimit}"/>
+                                          
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                            -->
+                        </ListView>
                     </StackLayout>
                 </ScrollView>
             </Frame>

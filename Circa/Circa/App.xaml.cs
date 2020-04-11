@@ -13,14 +13,14 @@ namespace Circa
 { 
     public partial class App : Application
     {
-        public static User admin = AdminConfig();
-        public static User AdminConfig()
+        public static AppUser admin = AdminConfig();
+        public static AppUser AdminConfig()
         {
-            var events = new ObservableCollection<CalendarEvent>();
-            var admin = new User(0, "Admin", events);
+            var events = new List<CalendarEvent>();
+            var admin = new AppUser(0, "Admin", events);
 
-            var event1 = new CalendarEvent("Titulo1", "Descripción1", "Familia", admin, DateTimeOffset.UtcNow);
-            var event2 = new CalendarEvent("Titulo2", "Descripción2", "Trabajo", admin, DateTimeOffset.Now);
+            var event1 = new CalendarEvent("Titulo1", "Descripción1", "Familia", admin, DateTime.UtcNow, new List<DateOption>());
+            var event2 = new CalendarEvent("Titulo2", "Descripción2", "Trabajo", admin, DateTime.Now, new List<DateOption>());
 
             admin.Events.Add(event1);
             admin.Events.Add(event2);
@@ -35,6 +35,7 @@ namespace Circa
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
+
         }
 
         protected override void OnStart()
